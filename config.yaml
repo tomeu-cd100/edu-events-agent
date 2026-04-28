@@ -17,36 +17,36 @@ sources:
       url: https://www.vilaweb.cat/categoria/societat/educacio/feed/
 
     # ❓ Revista cultural (inclou debats educatius)
-    - name: Núvol - Educació
-      url: https://www.nuvol.com/categoria/educacio/feed/
+    # name: Núvol - Educació
+    # url: https://www.nuvol.com/categoria/educacio/feed/
 
     # ❓ UOC - blog de tecnologies i comunicació multimèdia
     - name: UOC Mosaic
       url: https://mosaic.uoc.edu/feed/
 
     # ❓ UOC - Blog d'informàtica via FeedBurner
-    - name: UOC Informàtica
-      url: https://feeds.feedburner.com/uocinformatica
+    # name: UOC Informàtica
+    # url: https://feeds.feedburner.com/uocinformatica
 
     # ❓ UOC - eLearn Center (publica articles sobre pedagogia digital)
-    - name: UOC eLearn Center
-      url: https://elc.blogs.uoc.edu/feed/
+    # name: UOC eLearn Center
+    # url: https://elc.blogs.uoc.edu/feed/
 
     # ❓ UOC - Blog Management & eLearning
-    - name: UOC Management & eLearning
-      url: https://blogs.uoc.edu/mel/feed/
+    # name: UOC Management & eLearning
+    # url: https://blogs.uoc.edu/mel/feed/
 
     # ❓ Associació de mestres Rosa Sensat (activitats i reflexió pedagògica)
-    - name: Rosa Sensat
-      url: https://www2.rosasensat.org/feed/
+    # name: Rosa Sensat
+    # url: https://www2.rosasensat.org/feed/
 
     # ❓ Docents.cat — comunitat de docents catalans
     - name: Docents.cat
       url: https://docents.cat/feed/
 
     # ❓ Secció d'educació del portal Social.cat
-    - name: Social.cat - Educació
-      url: https://www.social.cat/rss/noticies/educacio
+    # name: Social.cat - Educació
+    # url: https://www.social.cat/rss/noticies/educacio
 
     # ═══════════════════════════════════════════════════════════════════
     # 🟧  ESPANYA - mitjans especialitzats
@@ -65,12 +65,12 @@ sources:
       url: https://intef.es/feed/
 
     # ❓ Observatorio de Tecnología Educativa (INTEF, articles temàtics)
-    - name: INTEF - Observatorio
-      url: https://intef.es/observatorio/feed/
+    # name: INTEF - Observatorio
+    # url: https://intef.es/observatorio/feed/
 
     # 🔎 Descobert a HTML
-    - name: Hechos de Hoy - Educación
-      url: https://hechosdehoy.com/categoria/educacion/feed/
+    # name: Hechos de Hoy - Educación
+    # url: https://hechosdehoy.com/categoria/educacion/feed/
 
     # ❓ Notícies del portal Educaweb (butlletí, convocatòries, màsters)
     - name: Educaweb - Notícies
@@ -89,16 +89,16 @@ sources:
       url: https://eldiariodelaeducacion.com/feed/
 
     # ❓ Tiching - blog amb recursos didàctics
-    - name: Tiching Blog
-      url: https://blog.tiching.com/feed/
+    # name: Tiching Blog
+    # url: https://blog.tiching.com/feed/
 
     # ❓ AulaPlaneta
-    - name: AulaPlaneta
-      url: https://www.aulaplaneta.com/feed/
+    # name: AulaPlaneta
+    # url: https://www.aulaplaneta.com/feed/
 
     # ❓ Revista acadèmica "Profesorado" (universitat de Granada)
-    - name: Revista Profesorado (UGR)
-      url: https://revistaseug.ugr.es/index.php/profesorado/gateway/plugin/WebFeedGatewayPlugin/rss2
+    # name: Revista Profesorado (UGR)
+    # url: https://revistaseug.ugr.es/index.php/profesorado/gateway/plugin/WebFeedGatewayPlugin/rss2
 
     # ═══════════════════════════════════════════════════════════════════
     # 🟨  IA + EDUCACIÓ (focus específic)
@@ -109,12 +109,12 @@ sources:
       url: https://hackeducation.com/feed.xml
 
     # ❓ AI for Education
-    - name: AI for Education
-      url: https://www.aiforeducation.io/blog-feed.xml
+    # name: AI for Education
+    # url: https://www.aiforeducation.io/blog-feed.xml
 
     # ❓ MIT J-WEL (programa d'aprenentatge al món)
-    - name: MIT J-WEL
-      url: https://jwel.mit.edu/feed
+    # name: MIT J-WEL
+    # url: https://jwel.mit.edu/feed
 
     # ═══════════════════════════════════════════════════════════════════
     # 🟦  INTERNACIONAL — edtech / higher ed
@@ -141,16 +141,16 @@ sources:
       url: https://www.eschoolnews.com/feed/
 
     # ❓ EdTech Magazine
-    - name: EdTech Magazine K-12
-      url: https://edtechmagazine.com/k12/rss
+    # name: EdTech Magazine K-12
+    # url: https://edtechmagazine.com/k12/rss
 
     # ❓ Inside Higher Ed
     - name: Inside Higher Ed
       url: https://www.insidehighered.com/rss.xml
 
     # ❓ Chronicle of Higher Education
-    - name: Chronicle of Higher Ed
-      url: https://www.chronicle.com/section/news/rss
+    # name: Chronicle of Higher Ed
+    # url: https://www.chronicle.com/section/news/rss
 
     # ❓ Class Central — MOOCs i cursos oberts
     - name: Class Central Report
@@ -176,74 +176,6 @@ sources:
 filter:
   min_score: 2
   title_weight: 2
-
-  # ─────────────────────────────────────────────────────────────────────
-  # CATEGORIES — agrupen les troballes al correu per temàtica.
-  # Ordre = prioritat: la PRIMERA regla que matxegi guanya.
-  # Si un event no matxeja amb cap, cau a la categoria marcada amb
-  # `default: true` (o a "Altres" per defecte).
-  # ─────────────────────────────────────────────────────────────────────
-  categories:
-    - name: "📚 Formació per a docents"
-      match_any:
-        - formació professorat
-        - formación profesorado
-        - formació docent
-        - formación docente
-        - teacher training
-        - professional development
-        - curs professorat
-        - curso profesorado
-        - curs per a docents
-        - curso para docentes
-        - curso para profesores
-        - taller docent
-        - taller per a docents
-        - taller para docentes
-        - formació permanent
-        - formación permanente
-
-    - name: "🎓 Màsters i postgraus"
-      match_any:
-        - màster
-        - máster
-        - master's
-        - masters degree
-        - postgrau
-        - postgrado
-        - doctorat
-        - doctorado
-        - PhD
-
-    - name: "🎤 Jornades i congressos"
-      match_any:
-        - jornada
-        - jornades
-        - congrés
-        - congressos
-        - congreso
-        - congresos
-        - conference
-        - conferences
-        - simposi
-        - simposio
-        - symposium
-        - trobada
-        - encuentro
-
-    - name: "💻 Seminaris i webinars"
-      match_any:
-        - webinar
-        - webinars
-        - seminari
-        - seminario
-        - seminar
-        - masterclass
-        - curs online
-        - curso online
-
-    - name: "📰 Articles i novetats"
-      default: true
 
   require_any:
     # català
