@@ -1,0 +1,44 @@
+name: Agent diari d'esdeveniments educatius
+
+on:
+  schedule:
+    # 06:00 UTC = 08:00 CEST (estiu) / 07:00 CET (hivern) a Barcelona.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instal·la dependències
+        run: pip install -r requirements.txt
+
+      - name: Executa l'agent
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_TO: ${{ secrets.SMTP_TO }}
+        run: python main.py
+
+      - name: Persisteix events.db
+        run: |
+          if [[ -n "$(git status --porcelain events.db)" ]]; then
+            git config user.name "edu-agent-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add events.db
+            git commit -m "chore: update events.db ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "Sense canvis a events.db"
+          fi
